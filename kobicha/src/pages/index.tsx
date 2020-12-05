@@ -6,7 +6,7 @@ interface Props {
 const Home: React.FC<Props> = ({ data }) => {
   return (
     <>
-    Home
+      <Hero data={data?.hero} />
     </>
   );
 };
