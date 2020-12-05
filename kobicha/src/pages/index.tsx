@@ -1,4 +1,4 @@
-import { Featured, Hero } from "../components";
+import { Featured, Products, Hero } from "../components";
 interface Props {
   data: Data;
 }
@@ -8,6 +8,7 @@ const Home: React.FC<Props> = ({ data }) => {
     <>
       <Hero data={data?.hero} />
       <Featured data={data.products} />
+      <Products />
     </>
   );
 };
