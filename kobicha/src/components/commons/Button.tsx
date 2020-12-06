@@ -5,6 +5,10 @@ interface Props {
 }
 
 export const Button = styled.button<Props>`
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  font-size: 1.2rem;
   ${({ btnType, theme }) =>
     btnType === "primary"
       ? `background: ${theme.colors.primary};
@@ -13,9 +17,11 @@ export const Button = styled.button<Props>`
       : `background: ${theme.colors.white};
   color: ${theme.colors.primary};
   border: 1px solid ${theme.colors.primary};
+  &:hover{
+    background: ${theme.colors.primary};
+    color: ${theme.colors.white};
+  }
   `}
 
-}
   padding: 10px 30px;
-
 `;
