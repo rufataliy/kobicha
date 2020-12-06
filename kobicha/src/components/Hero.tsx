@@ -16,6 +16,10 @@ const Container = styled.div`
     & p {
       font-size: 1.2rem;
     }
+    & h1 {
+      color: ${({ theme }) => theme.colors.primary};
+      margin-bottom: 20px;
+    }
   }
   & .right {
     background: ${({ theme }) => theme.colors.primary};
@@ -47,7 +51,7 @@ const Container = styled.div`
     height: auto;
     & .left {
       height: 100%;
-      width: 85%;
+      width: 95%;
       margin: 0 auto;
       margin-top: -90px;
       order: 2;
@@ -64,7 +68,8 @@ const Container = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: column;
     & .left {
-      width: 65%;
+      padding: 30px;
+      width: 85%;
       margin: 0 auto;
       margin-top: -90px;
       order: 2;
