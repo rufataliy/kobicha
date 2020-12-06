@@ -7,7 +7,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.4",
     "next": "latest",
+    "next-fonts": "^1.5.1",
     "normalize.css": "^8.0.1",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
