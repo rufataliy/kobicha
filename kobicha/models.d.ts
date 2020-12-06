@@ -23,5 +23,7 @@ interface Product {
   weight: string;
   description: string;
   new: boolean;
+  featured: boolean;
   extra_content: string;
+  price: string;
 }
