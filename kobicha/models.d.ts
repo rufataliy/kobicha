@@ -13,13 +13,21 @@ interface Data {
     left: string;
     right: string;
   };
+  contact: {
+    street: string;
+    city: string;
+    state: string;
+    zip_code: string;
+    Phone: string;
+    email: string;
+  };
 }
 
 interface Product {
   id: string;
   title: string;
   subtitle: string;
-  image: string;
+  image: string[];
   weight: string;
   description: string;
   new: boolean;
