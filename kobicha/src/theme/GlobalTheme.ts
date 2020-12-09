@@ -11,13 +11,13 @@ export const theme: DefaultTheme = {
     xs: "0.5rem",
     sm: "1rem",
     md: "2rem",
-    lg: "3rem",
+    lg: "5rem",
     xlg: "10rem",
   },
   sizes: {
     xs: "0.7rem",
     sm: "1rem",
-    md: "1.5rem",
+    md: "1.1rem",
     lg: "2.5rem",
   },
   breakpoints: {

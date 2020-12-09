@@ -91,6 +91,11 @@ ${normalize}
 }
 
 *{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
     font-family: 'ralewayregular';
     box-sizing: border-box;
     margin:0;
@@ -102,6 +107,15 @@ p {
  
 #__next{
   min-height:100vh;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #6B4423;
+  border-radius: 8px;
 }
 
 `;
@@ -150,6 +164,7 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+
 
 /* Grouping content
    ========================================================================== */
