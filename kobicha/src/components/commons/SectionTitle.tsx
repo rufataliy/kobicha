@@ -1,18 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 200px;
   text-align: center;
-  margin-top: 150px;
+  margin-bottom: ${({ theme }) => theme.gaps.lg};
   & h1 {
-    font-size: 3.5rem;
-    width: 50%;
+    width: 80%;
     text-align: center;
-    padding-bottom: 10px;
     margin: 0 auto;
-
-    margin-top: ${({ theme }) => theme.gaps.lg};
     margin-bottom: ${({ theme }) => theme.gaps.sm};
+    padding-bottom: ${({ theme }) => theme.gaps.sm};
     color: ${({ theme }) => theme.colors.primary};
     border-bottom: 1px solid #6b4423;
   }
@@ -20,8 +16,17 @@ const Container = styled.div`
     width: 40%;
     margin: 0 auto;
     font-style: italic;
-    font-size: 1.5rem;
     color: ${({ theme }) => theme.colors.primary};
+    font-size: ${({ theme }) => theme.sizes.md};
+  }
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    & h1 {
+      width: 50%;
+      font-size: ${({ theme }) => theme.sizes.lg};
+    }
+    & p {
+      font-size: ${({ theme }) => theme.sizes.md};
+    }
   }
 `;
 
