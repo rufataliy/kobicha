@@ -6,7 +6,7 @@ const Container = styled.div`
   height: 45px;
   position: relative;
 
-  transform: rotate(0deg) scale(0.7);
+  transform: rotate(0deg) scale(0.5);
   transition: 0.5s ease-in-out;
   cursor: pointer;
 
