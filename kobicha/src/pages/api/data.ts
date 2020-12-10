@@ -3,18 +3,18 @@ const header = {
   logo_mobile: "/img/logo-mobile.png",
   menu: [
     { name: "Home", path: "/" },
-    { name: "About", path: "#about" },
-    { name: "Products", path: "#quick-view" },
-    { name: "Contact", path: "#contact" },
+    { name: "About", path: "/#about" },
+    { name: "Products", path: "/#quick-view" },
+    { name: "Contact", path: "/#contact" },
   ],
 };
 const footer = {
   logo: "/img/logo-footer.png",
   menu: [
     { name: "Home", path: "/" },
-    { name: "About", path: "#about" },
-    { name: "Products", path: "#quick-view" },
-    { name: "Contact", path: "#contact" },
+    { name: "About", path: "/#about" },
+    { name: "Products", path: "/#quick-view" },
+    { name: "Contact", path: "/#contact" },
   ],
   social_link: [
     {
