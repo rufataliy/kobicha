@@ -151,9 +151,10 @@ export const ProductView: React.FC<Props> = ({ data }) => {
             <img height="200" src={selectedImg} alt={data.title} />
           </div>
           <div className="img-list">
-            {data.image.map((img) => {
+            {data.image.map((img, index) => {
               return (
                 <button
+                  key={img + index}
                   className={`btn-img ${
                     img === selectedImg ? "withBorder" : "  "
                   }`}

@@ -162,7 +162,7 @@ export const Header: React.FC<Props> = ({ data }) => {
                 <ul>
                   {data.menu.map((item) => {
                     return (
-                      <li>
+                      <li key={item.path}>
                         <Link href={item.path}>
                           <a className="header-link">{item.name}</a>
                         </Link>
@@ -189,13 +189,13 @@ interface SubHeaderProps {
 var SubHeader: React.FC<SubHeaderProps> = ({ className }) => {
   return (
     <div className={`profile-part ${className ? className : ""}`}>
-      <Link href="#cart">
+      <Link href="/#cart">
         <a className="header-link">
           <img height="30" src="/img/shopping-cart.png" alt="" />
           <p>Cart</p>
         </a>
       </Link>
-      <Link href="#user">
+      <Link href="/#user">
         <a className="header-link">
           <img height="30" src="/img/user.png" alt="" />
           <p>Account</p>

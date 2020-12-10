@@ -28,6 +28,7 @@ export const Featured: React.FC<Props> = ({ data }) => {
             if (product.featured) {
               return (
                 <Product
+                  key={product.id}
                   selected={false}
                   link={`/?product_id=${product.id}#quick-view-${product.id}`}
                   data={product}

@@ -105,14 +105,16 @@ export const Contact: React.FC<Props> = ({ data }) => {
         <div className="address">
           <h2>Details</h2>
           <table>
-            {labels.map((label) => {
-              return (
-                <tr>
-                  <th>{formatLabel(label)}</th>
-                  <td>{data[label]}</td>
-                </tr>
-              );
-            })}
+            <tbody>
+              {labels.map((label, index) => {
+                return (
+                  <tr key={label + index}>
+                    <th>{formatLabel(label)}</th>
+                    <td>{data[label]}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
         <div className="message-form">

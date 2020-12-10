@@ -165,6 +165,7 @@ export const Products: React.FC<Props> = ({ data }) => {
           {data.map((product) => {
             return (
               <Product
+                key={product.id}
                 htmlId={`quick-view-${product.id}`}
                 selected={product.id === selectedProduct?.id}
                 onSelect={handleProductSelect}

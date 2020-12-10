@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Wrapper } from "./commons";
+import Link from "next/link";
 
 const Container = styled.footer`
   border-top: 1px solid ${({ theme }) => theme.colors.primary};
   & .copyright {
     background: ${({ theme }) => theme.colors.primary};
-    padding: ${({ theme }) => theme.gaps.sm} 0;
+    padding: ${({ theme }) => theme.gaps.xs} 0;
     color: ${({ theme }) => theme.colors.white};
     text-align: center;
     & p {
@@ -90,14 +91,18 @@ export const Footer: React.FC<Props> = ({ data }) => {
           </div>
           <div className="nav">
             {data.menu.map((item) => {
-              return <a href={item.path}>{item.name}</a>;
+              return (
+                <Link key={item.path} href={item.path}>
+                  <a>{item.name}</a>
+                </Link>
+              );
             })}
           </div>
           <div className="social-link">
             {data.social_link.map((item) => {
               return (
-                <a href={item.link}>
-                  <img height="30" src={item.icon} alt="" />
+                <a key={item.name} href={item.link}>
+                  <img height="30" src={item.icon} alt={item.name} />
                   <p>{item.name}</p>
                 </a>
               );
