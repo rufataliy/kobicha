@@ -9,6 +9,7 @@ const Home: React.FC<Props> = ({ data }) => {
     <>
       <Hero data={data?.hero} />
       <Featured data={data.products} />
+      <Products data={data.products} />
       <Contact data={data.contact} />
     </>
   );
