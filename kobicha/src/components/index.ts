@@ -4,3 +4,4 @@ export { Products } from "./Products";
 export { Values } from "./Values";
 export { Contact } from "./Contact";
 export { Hero } from "./Hero";
+export { Footer } from "./Footer";
