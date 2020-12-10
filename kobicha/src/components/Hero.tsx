@@ -4,17 +4,16 @@ import { Wrapper } from "./commons";
 import MarkDown from "react-markdown";
 
 const Container = styled.div`
-  height: 500px;
   display: flex;
+
   & > * {
     width: 100%;
   }
   & .left {
     z-index: 1;
-    padding: 60px;
     background: ${({ theme }) => theme.colors.white};
     & p {
-      font-size: 1.2rem;
+      font-size: ${({ theme }) => theme.sizes.sm};
     }
     & h1 {
       color: ${({ theme }) => theme.colors.primary};
@@ -22,8 +21,9 @@ const Container = styled.div`
     }
   }
   & .right {
+    overflow: hidden;
     background: ${({ theme }) => theme.colors.primary};
-    background-image: url("/img/coffee-beans.jpg");
+    background-image: url("/img/beans-video-bg.png");
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -41,7 +41,7 @@ const Container = styled.div`
       position: absolute;
       height: 300px;
       left: 30%;
-      border: 9px solid #6b4423;
+      border: 9px solid ${({ theme }) => theme.colors.primary};
       display: none;
     }
   }
@@ -55,28 +55,26 @@ const Container = styled.div`
       margin: 0 auto;
       margin-top: -90px;
       order: 2;
+      padding: ${({ theme }) => theme.gaps.sm};
     }
     & .right {
       height: 100%;
       height: 300px;
       order: 1;
-      & .video-overlay-img {
+
+      & .video-overlay-img,
+      & video {
         display: none;
       }
     }
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    flex-direction: column;
     & .left {
-      padding: 30px;
       width: 85%;
-      margin: 0 auto;
-      margin-top: -90px;
-      order: 2;
+      padding: ${({ theme }) => theme.gaps.md};
     }
     & .right {
       overflow: hidden;
-      order: 1;
     }
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
@@ -86,8 +84,14 @@ const Container = styled.div`
       width: 50%;
       margin-top: 0;
       order: 0;
+      & p {
+        font-size: ${({ theme }) => theme.sizes.md};
+      }
     }
     & .right {
+      & video {
+        display: block;
+      }
       height: 100%;
       width: 50%;
       order: 0;
@@ -113,8 +117,9 @@ export const Hero: React.FC<Props> = ({ data }) => {
           <div className="overlay"></div>
           <img
             height="300"
+            width="200"
             className="video-overlay-img"
-            src="/img/iloveyou.jpg"
+            src="/img/video-overlay-img.jpg"
             alt="i love you "
           />
           <video muted loop autoPlay height="520">
