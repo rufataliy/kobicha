@@ -7,8 +7,41 @@ const HeaderStyled = styled.header`
   width: 100%;
   display: flex;
 
-  & .header-link:not(last-child) {
-    margin-right: 20px;
+  & .header-link {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    color: ${({ theme }) => theme.colors.primary};
+  }
+  & .header-link:not(:last-child) {
+    margin-right: ${({ theme }) => theme.gaps.sm};
+  }
+  & .profile-part {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  & .profile-part .header-link {
+    text-align: center;
+    opacity: 0.65;
+    border-bottom: 2px solid transparent;
+    & p {
+      font-weight: bold;
+      margin: 0;
+      color: ${({ theme }) => theme.colors.primary};
+    }
+    &:hover {
+      opacity: 1;
+      border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
+    }
+    & img {
+      height: 25px;
+      display: inline-block;
+    }
   }
   & .logo-section {
     position: relative;
@@ -17,7 +50,6 @@ const HeaderStyled = styled.header`
     height: 100%;
     width: 50%;
     padding: ${({ theme }) => theme.gaps.sm + " 0px"};
-    background: rgba(255, 255, 255, 0.7);
     & .logo-img {
       position: relative;
       height: 50px;
@@ -28,51 +60,37 @@ const HeaderStyled = styled.header`
     }
 
     & .menu {
-      padding: 0 50px;
-      padding-top: 100px;
       position: absolute;
       width: 100%;
-      height: 650px;
       top: -650px;
       background: rgba(255, 255, 255, 0.9);
       z-index: 10;
       transition: 0.3s ease-out;
       & ul {
+        padding: 0;
         list-style: none;
         & a {
-          text-decoration: none;
-          color: ${({ theme }) => theme.colors.primary};
           font-size: 1.5rem;
           font-weight: bold;
           transition: 0.2s;
           display: block;
-          padding: 20px;
+          padding: ${({ theme }) => theme.gaps.sm};
         }
         & a:hover {
-          margin-left: 10px;
+          padding-left: ${({ theme }) => theme.gaps.md};
           background: ${({ theme }) => theme.colors.primary};
           color: ${({ theme }) => theme.colors.white};
         }
       }
     }
     & .menu.open {
-      top: 0%;
+      top: 100%;
     }
   }
 
   & .user-section {
     position: relative;
     width: 50%;
-  }
-  & .profile-part {
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    position: relative;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -102,6 +120,7 @@ const HeaderStyled = styled.header`
     & .logo-section {
       width: 50%;
       & .menu {
+        padding: 0 ${({ theme }) => theme.gaps.md};
         left: 100%;
       }
       & .profile-part {
@@ -115,6 +134,7 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
 `;
 
 interface Props {
@@ -138,18 +158,7 @@ export const Header: React.FC<Props> = ({ data }) => {
             <MenuBtn onClick={() => setOpen(!open)} />
             <div className={`menu ${open ? "open" : ""}`}>
               <nav>
-                <div className="profile-part">
-                  <Link href="/cart">
-                    <a className="header-link">
-                      <img height="30" src="/img/shopping-cart.png" alt="" />
-                    </a>
-                  </Link>
-                  <Link href="/cart">
-                    <a className="header-link">
-                      <img height="30" src="/img/user.png" alt="" />
-                    </a>
-                  </Link>
-                </div>
+                <SubHeader />
                 <ul>
                   {data.menu.map((item) => {
                     return (
@@ -165,21 +174,33 @@ export const Header: React.FC<Props> = ({ data }) => {
             </div>
           </div>
           <div className="user-section">
-            <div className="profile-part hide-mobile">
-              <Link href="/cart">
-                <a className="header-link">
-                  <img height="30" src="/img/shopping-cart.png" alt="" />
-                </a>
-              </Link>
-              <Link href="/cart">
-                <a className="header-link">
-                  <img height="30" src="/img/user.png" alt="" />
-                </a>
-              </Link>
-            </div>
+            <SubHeader className="hide-mobile" />
           </div>
         </HeaderStyled>
       </Wrapper>
     </Container>
+  );
+};
+
+interface SubHeaderProps {
+  className?: string;
+}
+
+var SubHeader: React.FC<SubHeaderProps> = ({ className }) => {
+  return (
+    <div className={`profile-part ${className ? className : ""}`}>
+      <Link href="#cart">
+        <a className="header-link">
+          <img height="30" src="/img/shopping-cart.png" alt="" />
+          <p>Cart</p>
+        </a>
+      </Link>
+      <Link href="#user">
+        <a className="header-link">
+          <img height="30" src="/img/user.png" alt="" />
+          <p>Account</p>
+        </a>
+      </Link>
+    </div>
   );
 };
