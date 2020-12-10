@@ -7,10 +7,8 @@ const Contianer = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
     overflow: auto;
     align-items: center;
-    height: 550px;
   }
 `;
 
@@ -28,7 +26,13 @@ export const Featured: React.FC<Props> = ({ data }) => {
         <div>
           {data.map((product) => {
             if (product.featured) {
-              return <Product data={product} />;
+              return (
+                <Product
+                  selected={false}
+                  link={`/?product_id=${product.id}#quick-view-${product.id}`}
+                  data={product}
+                />
+              );
             }
           })}
         </div>
