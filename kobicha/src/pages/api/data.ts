@@ -8,6 +8,37 @@ const header = {
     { name: "Contact", path: "#contact" },
   ],
 };
+const footer = {
+  logo: "/img/logo-footer.png",
+  menu: [
+    { name: "Home", path: "/" },
+    { name: "About", path: "#about" },
+    { name: "Products", path: "#quick-view" },
+    { name: "Contact", path: "#contact" },
+  ],
+  social_link: [
+    {
+      icon: "/img/facebook.png",
+      name: "Facebook",
+      link: "https://www.facebook.com/",
+    },
+    {
+      icon: "/img/instagram.png",
+      name: "Instagram",
+      link: "https://www.instagram.com/",
+    },
+    {
+      icon: "/img/twitter.png",
+      name: "Twitter",
+      link: "https://twitter.com/home",
+    },
+    {
+      icon: "/img/linkedin.png",
+      name: "Linkedin",
+      link: "https://twitter.com/home",
+    },
+  ],
+};
 const hero = {
   text: `# Coffee 
 
@@ -217,4 +248,5 @@ export const data: Data = {
   hero,
   values,
   contact,
+  footer,
 };

@@ -4,6 +4,11 @@ interface Data {
     logo_mobile: string;
     menu: { name: string; path: string }[];
   };
+  footer: {
+    logo: string;
+    menu: { name: string; path: string }[];
+    social_link: { icon: string; link: string; name: string }[];
+  };
   hero: {
     text: string;
     video: string;
