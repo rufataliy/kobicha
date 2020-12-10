@@ -6,9 +6,11 @@ export const Wrapper = styled.div`
   max-width: 1266px;
   margin: 0 auto;
 
-  &:not(:first-child),
-  &:not(:last-child) {
-    margin-bottom: ${({ theme }) => theme.gaps.lg};
+  margin-bottom: ${({ theme }) => theme.gaps.lg};
+
+  &:first-child,
+  &:last-child {
+    margin: 0 auto;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -19,9 +21,11 @@ export const Wrapper = styled.div`
     width: 90%;
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
-    &:not(:first-child),
-    &:not(:last-child) {
-      margin-bottom: ${({ theme }) => theme.gaps.xlg};
+    margin-bottom: ${({ theme }) => theme.gaps.xlg};
+
+    &:first-child,
+    &:last-child {
+      margin: 0 auto;
     }
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
