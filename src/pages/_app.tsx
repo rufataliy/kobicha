@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, theme } from "../theme";
 import { Footer, Header } from "../components";
-
+import { AppContext } from "next/app";
 const App = ({ Component, pageProps, appProps }) => {
   return (
     <>
@@ -17,8 +17,9 @@ const App = ({ Component, pageProps, appProps }) => {
 
 export default App;
 
-App.getInitialProps = async function (context) {
-  const data: Data = await fetch("http://localhost:3000/api")
+App.getInitialProps = async function (app: AppContext) {
+  const url = "http://" + app.ctx.req.headers.host + "/api";
+  const data: Data = await fetch(url)
     .then((res) => res.json())
     .then((data) => data);
 
