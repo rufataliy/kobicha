@@ -26,7 +26,7 @@ class MyDocument extends Document {
           />
           <meta
             name="image"
-            content="https://kobicha.rufat.tech/img/logo-footer.png"
+            content="https://kobicha.rufat.tech/img/logo-full.png"
           />
 
           {/* <!-- Facebook Meta Tags --> */}
@@ -39,7 +39,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://kobicha.rufat.tech/img/logo-footer.png"
+            content="https://kobicha.rufat.tech/img/logo-full.png"
           />
 
           {/* <!-- Twitter Meta Tags --> */}
@@ -51,7 +51,7 @@ class MyDocument extends Document {
           />
           <meta
             name="twitter:image"
-            content="https://kobicha.rufat.tech/img/logo-footer.png"
+            content="https://kobicha.rufat.tech/img/logo-full.png"
           />
           {/* <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> --> */}
           {/* <!--
