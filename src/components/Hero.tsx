@@ -119,7 +119,7 @@ export const Hero: React.FC<Props> = ({ data }) => {
             height="300"
             width="200"
             className="video-overlay-img"
-            src="/img/video-overlay-img.jpg"
+            src="/img/video-overlay-img.JPG"
             alt="i love you "
           />
           <video muted loop autoPlay height="520">
