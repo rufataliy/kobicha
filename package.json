@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 3004"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.4",
