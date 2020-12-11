@@ -18,7 +18,7 @@ const App = ({ Component, pageProps, appProps }) => {
 export default App;
 
 App.getInitialProps = async function (app: AppContext) {
-  const url = "https://" + app.ctx.req.headers.host + "/api";
+  const url = process.env.BASE_URL + "/api";
   const data: Data = await fetch(url)
     .then((res) => res.json())
     .then((data) => data);

@@ -1,3 +1,5 @@
 const withFont = require("next-fonts")
 
-module.exports = withFont({ target: "serverless" })
+module.exports = withFont({
+  env: { BASE_URL: process.env.BASE_URL },
+})
