@@ -5,6 +5,7 @@ import { AppContext } from "next/app";
 const App = ({ Component, pageProps, appProps }) => {
   return (
     <>
+      <title>Kobicha | Coffee shop</title>
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <Header data={appProps.data.header} />

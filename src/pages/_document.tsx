@@ -71,7 +71,6 @@ class MyDocument extends Document {
             work correctly both with client-side routing and a non-root public URL.
             Learn how to configure a non-root public URL by running `npm run build`.
           --> */}
-          <title>Kobicha | Coffee shop</title>
         </Head>
         <body>
           <Main />
