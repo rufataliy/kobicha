@@ -23,7 +23,7 @@ const Container = styled.div`
   & .right {
     overflow: hidden;
     background: ${({ theme }) => theme.colors.primary};
-    background-image: url("/img/beans-video-bg.png");
+    background-image: url("/img/beans-video-bg.jpg");
     background-size: cover;
     background-position: center;
     z-index: -1;
