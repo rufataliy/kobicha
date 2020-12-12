@@ -8,7 +8,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={"#b3e3cc"} />
+          <meta name="theme-color" content={"#6b4423"} />
           <meta charSet="utf-8" />
           <link
             rel="icon"
